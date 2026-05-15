@@ -1,13 +1,12 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     blender
     krita
     inkscape
     gimp
     obs-studio
-
     mpv
     imv
   ];

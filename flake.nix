@@ -14,13 +14,13 @@
         zephyrus-g14 = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ./configuration.nix
+            ./hosts/zephyrus-g14
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs; };
-              home-manager.users.alex = ./home.nix;
+              home-manager.users.alex = ./home;
             }
           ];
         };
