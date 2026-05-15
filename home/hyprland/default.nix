@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./waybar.nix
+    ./caelestia.nix
   ];
   wayland.windowManager.hyprland = {
     enable = true;
@@ -19,7 +19,7 @@
 
       # Autostart
       exec-once = [
-        "waybar"
+        "caelestia-shell"
         "$terminal"
       ];
 

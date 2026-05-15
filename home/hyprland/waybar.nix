@@ -63,9 +63,8 @@
         "custom/performance" = {
           format = "{}";
           interval = 5;
-          exec = ''asusctl profile -p 2>/dev/null | awk '{print $NF}' | sed 's/Quiet/󰌪/;s/Balanced/󰈐/;s/Performance/󰓅/'''';
+          exec = "asusctl profile -p 2>/dev/null | awk '{print $NF}' | sed 's/Quiet/󰌪/;s/Balanced/󰈐/;s/Performance/󰓅/'";
           on-click = "asusctl profile -n";
-          tooltip-format = "Click to cycle performance profile";
         };
 
         tray = {
