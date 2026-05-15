@@ -74,6 +74,7 @@
         };
       };
 
+
       # Keybindings
       bind = [
         "$mod, Return, exec, $terminal"
