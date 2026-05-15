@@ -7,6 +7,7 @@
     grim
     slurp
     imv
+    blueman
     hyprlock
     brightnessctl
     playerctl

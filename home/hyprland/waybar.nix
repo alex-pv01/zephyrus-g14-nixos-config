@@ -11,7 +11,7 @@
 
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = [ "pulseaudio" "network" "battery" "tray" ];
+        modules-right = [ "custom/performance" "bluetooth" "pulseaudio" "network" "battery" "tray" ];
 
         "hyprland/workspaces" = {
           format = "{id}";
@@ -50,6 +50,24 @@
           on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
         };
 
+        bluetooth = {
+          format = "󰂯";
+          format-connected = "󰂱 {num_connections}";
+          format-disabled = "󰂲";
+          tooltip-format = "{controller_alias}\n{num_connections} connected";
+          tooltip-format-connected = "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}";
+          tooltip-format-enumerate-connected = "{device_alias}";
+          on-click = "blueman-manager";
+        };
+
+        "custom/performance" = {
+          format = "{}";
+          interval = 5;
+          exec = ''asusctl profile -p 2>/dev/null | awk '{print $NF}' | sed 's/Quiet/󰌪/;s/Balanced/󰈐/;s/Performance/󰓅/'''';
+          on-click = "asusctl profile -n";
+          tooltip-format = "Click to cycle performance profile";
+        };
+
         tray = {
           spacing = 10;
         };
@@ -82,6 +100,22 @@
 
       #workspaces button:hover {
         background-color: rgba(245, 194, 231, 0.1);
+      }
+
+      #custom-performance {
+        padding: 0 10px;
+      }
+
+      #bluetooth {
+        padding: 0 10px;
+      }
+
+      #bluetooth.connected {
+        color: #89b4fa;
+      }
+
+      #bluetooth.disabled {
+        color: #6c7086;
       }
 
       #clock,

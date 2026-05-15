@@ -17,7 +17,15 @@
 
   xdg.mimeApps = {
     enable = true;
-    defaultApplications."image/*" = "imv.desktop";
+    defaultApplications = {
+      "image/png" = "imv-dir.desktop";
+      "image/jpeg" = "imv-dir.desktop";
+      "image/gif" = "imv-dir.desktop";
+      "image/webp" = "imv-dir.desktop";
+      "image/bmp" = "imv-dir.desktop";
+      "image/tiff" = "imv-dir.desktop";
+      "image/svg+xml" = "imv-dir.desktop";
+    };
   };
 
   home.stateVersion = "25.11";

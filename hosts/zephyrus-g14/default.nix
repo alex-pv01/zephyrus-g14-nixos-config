@@ -73,6 +73,9 @@
     pulse.enable = true;
   };
 
+  # Bluetooth
+  hardware.bluetooth.enable = true;
+
   # User
   users.users.alex = {
     isNormalUser = true;
