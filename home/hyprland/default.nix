@@ -59,11 +59,6 @@
         ];
       };
 
-      # Layout
-      dwindle = {
-        pseudotile = true;
-        preserve_split = true;
-      };
 
       # Input
       input = {
@@ -84,7 +79,6 @@
         "$mod, V, togglefloating,"
         "$mod, D, exec, $menu"
         "$mod, P, pseudo,"
-        "$mod, J, togglesplit,"
         "$mod, F, fullscreen,"
 
         # Move focus
