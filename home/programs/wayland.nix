@@ -6,6 +6,7 @@
     fuzzel
     grim
     slurp
+    hyprlock
     brightnessctl
     playerctl
   ];
