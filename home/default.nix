@@ -4,6 +4,7 @@
   imports = [
     ./shell
     ./programs
+    ./hyprland
   ];
 
   home.username = "alex";
