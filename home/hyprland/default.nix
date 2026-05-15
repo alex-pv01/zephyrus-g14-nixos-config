@@ -11,7 +11,7 @@
 
       # Mod key
       "$mod" = "SUPER";
-      "$terminal" = "kitty";
+      "$terminal" = "alacritty";
       "$menu" = "fuzzel";
 
       # Autostart

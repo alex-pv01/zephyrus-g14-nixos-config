@@ -6,9 +6,6 @@
     neovim
     vscode
 
-    # Terminals
-    kitty
-
     # Version control
     git
     gh
