@@ -4,8 +4,8 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/zephyrus-g14.nix
-    # ../../modules/hyprland.nix
-    ../../modules/niri.nix
+    ../../modules/hyprland.nix
+
     ../../modules/theme.nix
     ../../modules/fonts.nix
     ../../modules/music.nix

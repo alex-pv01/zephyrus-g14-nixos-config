@@ -11,5 +11,6 @@
     ./gaming.nix
     ./proton.nix
     ./ai.nix
+    ./wayland.nix
   ];
 }
