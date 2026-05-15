@@ -74,18 +74,38 @@
       bind = [
         "$mod, Return, exec, $terminal"
         "$mod, Q, killactive,"
-        "$mod, M, exit,"
-        "$mod, E, exec, nautilus"
+        "$mod SHIFT, Q, exit,"
+        "$mod, E, exec, alacritty -e yazi"
         "$mod, V, togglefloating,"
         "$mod, D, exec, $menu"
         "$mod, P, pseudo,"
+        "$mod, B, exec, firefox"
+        "$mod, L, exec, hyprlock"
         "$mod, F, fullscreen,"
+        "$mod SHIFT, F, fullscreenstate, 0 2"
+        "$mod, Tab, cyclenext,"
 
         # Move focus
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
+
+        # Move window
+        "$mod SHIFT, left, movewindow, l"
+        "$mod SHIFT, right, movewindow, r"
+        "$mod SHIFT, up, movewindow, u"
+        "$mod SHIFT, down, movewindow, d"
+
+        # Resize window
+        "$mod CTRL, left, resizeactive, -20 0"
+        "$mod CTRL, right, resizeactive, 20 0"
+        "$mod CTRL, up, resizeactive, 0 -20"
+        "$mod CTRL, down, resizeactive, 0 20"
+
+        # Scratchpad
+        "$mod, S, togglespecialworkspace, magic"
+        "$mod SHIFT, S, movetoworkspace, special:magic"
 
         # Workspaces
         "$mod, 1, workspace, 1"
