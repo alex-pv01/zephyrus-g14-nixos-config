@@ -61,6 +61,9 @@
     ltrace
     lsof
 
+    # Web development
+    nodejs
+
     # Security
     gnupg
     seahorse

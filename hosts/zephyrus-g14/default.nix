@@ -51,12 +51,18 @@
     enable = true;
     wayland.enable = true;
     theme = "sddm-astronaut-theme";
-    extraPackages = [
-      (pkgs.sddm-astronaut.override {
-        embeddedTheme = "japanese_aesthetic";
-      })
+    extraPackages = with pkgs; [
+      qt6.qt5compat
+      qt6.qtmultimedia
+      qt6.qtsvg
     ];
   };
+
+  environment.systemPackages = [
+    (pkgs.sddm-astronaut.override {
+      embeddedTheme = "pixel_sakura";
+    })
+  ];
   services.displayManager.defaultSession = "hyprland";
 
   # Keyboard layout
