@@ -50,6 +50,12 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
+    theme = "sddm-astronaut-theme";
+    extraPackages = [
+      (pkgs.sddm-astronaut.override {
+        embeddedTheme = "japanese_aesthetic";
+      })
+    ];
   };
   services.displayManager.defaultSession = "hyprland";
 
