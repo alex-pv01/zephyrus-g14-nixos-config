@@ -64,6 +64,9 @@
     # Terminal multiplexer
     tmux
 
+    # Python
+    uv
+
     # Web development
     nodejs
 
