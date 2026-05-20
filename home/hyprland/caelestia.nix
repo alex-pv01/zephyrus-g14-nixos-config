@@ -15,6 +15,9 @@
       bar.status = {
         showBattery = true;
       };
+      paths = {
+        mediaGif = "~/Pictures/media.gif";
+      };
     };
     cli = {
       enable = true;

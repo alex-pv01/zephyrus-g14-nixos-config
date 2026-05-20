@@ -9,8 +9,11 @@
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 
     settings = {
-      # Monitor config (auto-detect)
-      monitor = ",preferred,auto,1";
+      # Monitor config — HDMI-A-1 above laptop, others auto-detected to the right
+      monitor = [
+        "HDMI-A-1,preferred,auto-up,1"
+        ",preferred,auto,1"
+      ];
 
       # Mod key
       "$mod" = "SUPER";
@@ -81,11 +84,15 @@
         "$mod, Q, killactive,"
         "$mod SHIFT, Q, exit,"
         "$mod, E, exec, alacritty -e yazi"
+        "$mod SHIFT, E, exec, nautilus"
         "$mod, V, togglefloating,"
         "$mod, D, exec, $menu"
-        "$mod, P, pseudo,"
+
+        "$mod SHIFT, T, exec, alacritty -e tmux"
+        "$mod, N, exec, caelestia shell drawers toggle sidebar"
+        "$mod SHIFT, N, exec, caelestia shell notifs clear"
         "$mod, B, exec, firefox"
-        "$mod, L, exec, hyprlock"
+        "$mod, L, exec, loginctl lock-session"
         "$mod, F, fullscreen,"
         "$mod SHIFT, F, fullscreenstate, 0 2"
         "$mod, Tab, cyclenext,"

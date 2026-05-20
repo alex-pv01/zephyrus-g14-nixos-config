@@ -8,7 +8,6 @@
     slurp
     imv
     blueman
-    hyprlock
     pavucontrol
     brightnessctl
     playerctl

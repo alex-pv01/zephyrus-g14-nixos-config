@@ -61,8 +61,15 @@
     ltrace
     lsof
 
+    # Terminal multiplexer
+    tmux
+
     # Web development
     nodejs
+
+    # Remote access
+    teleport
+    openconnect
 
     # Security
     gnupg
