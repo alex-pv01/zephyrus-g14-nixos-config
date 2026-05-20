@@ -89,6 +89,7 @@
         "$mod, D, exec, $menu"
 
         "$mod SHIFT, T, exec, alacritty -e tmux"
+        "$mod SHIFT, D, exec, toggle-mode"
         "$mod, N, exec, caelestia shell drawers toggle sidebar"
         "$mod SHIFT, N, exec, caelestia shell notifs clear"
         "$mod, B, exec, firefox"

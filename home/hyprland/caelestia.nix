@@ -1,6 +1,19 @@
 { config, pkgs, ... }:
 
+let
+  toggle-mode = pkgs.writeShellScriptBin "toggle-mode" ''
+    current_mode=$(caelestia scheme get -m)
+    if [ "$current_mode" = "light" ]; then
+      caelestia scheme set -n rosepine -f moon -m dark
+    else
+      caelestia scheme set -n rosepine -f dawn -m light
+    fi
+  '';
+in
 {
+  home.packages = [ toggle-mode ];
+  xdg.configFile."caelestia/shell.json".force = true;
+
   programs.caelestia = {
     enable = true;
     systemd = {
