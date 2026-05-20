@@ -15,6 +15,8 @@
     "Xft.dpi" = 172;
   };
 
+  xdg.configFile."xdg-terminals.list".text = "alacritty\n";
+
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {

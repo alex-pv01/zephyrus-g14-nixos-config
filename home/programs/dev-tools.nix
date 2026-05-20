@@ -67,6 +67,9 @@
     # Web development
     nodejs
 
+    # Data science
+    kaggle
+
     # Remote access
     teleport
     openconnect
