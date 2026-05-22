@@ -91,6 +91,14 @@ sudo nixos-rebuild switch --flake ~/nixos-config
 - Duplicating packages across `home/programs/` files — check for overlap before adding.
 - Editing `hosts/zephyrus-g14/default.nix` when the change belongs in `modules/` or `home/`.
 
+## README Maintenance
+
+When making notable changes to the config, update `README.md` to reflect them:
+- Add new entries to **Notable Details** for custom overrides, workarounds, or non-obvious config.
+- Update the **Components** table if a major component is added, removed, or replaced.
+- Update the **Keybindings** table if keybindings are added or changed.
+- Update the **Repository Structure** tree if files are added or removed.
+
 ## Change Review Checklist
 
 1. Change is scoped to what was requested.
@@ -98,3 +106,4 @@ sudo nixos-rebuild switch --flake ~/nixos-config
 3. Packages are in Home Manager unless system-level config is required.
 4. No secrets or machine-specific hardcoded paths added.
 5. Flake evaluates without errors.
+6. `README.md` updated if the change is notable (see above).
