@@ -1,4 +1,8 @@
-# NixOS Config — ASUS Zephyrus G14
+# :diamond_shape_with_a_dot_inside: NixOS Config — ASUS Zephyrus G14 :diamond_shape_with_a_dot_inside:
+
+[![NixOS](https://img.shields.io/badge/NixOS-25.11-informational.svg?style=for-the-badge&logo=nixos&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41)](https://nixos.org/)
+[![Hyprland](https://img.shields.io/badge/Hyprland-dev-informational.svg?style=for-the-badge&logo=wayland&color=DDB6F2&logoColor=D9E0EE&labelColor=302D41)](https://hyprland.org/)
+[![Nix Flakes](https://img.shields.io/badge/Flakes-enabled-informational.svg?style=for-the-badge&logo=nixos&color=F5C2E7&logoColor=D9E0EE&labelColor=302D41)](https://wiki.nixos.org/wiki/Flakes)
 
 NixOS flake configuration for the ASUS Zephyrus G14 with Home Manager, Hyprland, and Caelestia shell.
 
