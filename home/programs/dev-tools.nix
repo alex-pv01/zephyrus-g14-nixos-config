@@ -17,7 +17,6 @@
     nnn
 
     # Modern CLI tools
-    btop
     htop
     eza
     bat
@@ -61,8 +60,7 @@
     ltrace
     lsof
 
-    # Terminal multiplexer
-    tmux
+    # Terminal multiplexer (managed below via programs.tmux)
 
     # Python
     uv
@@ -91,4 +89,32 @@
     gawk
     nix-output-monitor
   ];
+
+  programs.tmux = {
+    enable = true;
+    package = pkgs.tmux.overrideAttrs (old: {
+      version = "3.7-unstable";
+      src = pkgs.fetchFromGitHub {
+        owner = "tmux";
+        repo = "tmux";
+        rev = "634e9d6213b827d8ed93b8179f32cbb76823b619";
+        hash = "sha256-gOmCGekxcYkxXPcX9thIt3hbsqg5jQo2EWdl0XVVnik=";
+      };
+      patches = [ ];
+    });
+    mouse = true;
+    historyLimit = 10000;
+    extraConfig = ''
+      set -g focus-follows-mouse on
+    '';
+  };
+
+  programs.btop = {
+    enable = true;
+    package = pkgs.btop.override { cudaSupport = true; };
+    settings = {
+      color_theme = "caelestia";
+      shown_boxes = "cpu mem net proc gpu0";
+    };
+  };
 }

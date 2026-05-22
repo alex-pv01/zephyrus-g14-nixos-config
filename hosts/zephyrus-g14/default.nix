@@ -98,6 +98,9 @@
   # Firefox
   programs.firefox.enable = true;
 
+  # nix-ld for dynamically linked binaries (uv, etc.)
+  programs.nix-ld.enable = true;
+
   # Unfree packages
   nixpkgs.config.allowUnfree = true;
 
