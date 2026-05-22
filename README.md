@@ -1,8 +1,10 @@
-# :diamond_shape_with_a_dot_inside: NixOS Config — ASUS Zephyrus G14 :diamond_shape_with_a_dot_inside:
+<h1 align="center">:large_blue_diamond: NixOS Config — ASUS Zephyrus G14 :large_blue_diamond:</h1>
 
-[![NixOS](https://img.shields.io/badge/NixOS-25.11-informational.svg?style=for-the-badge&logo=nixos&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41)](https://nixos.org/)
-[![Hyprland](https://img.shields.io/badge/Hyprland-dev-informational.svg?style=for-the-badge&logo=wayland&color=DDB6F2&logoColor=D9E0EE&labelColor=302D41)](https://hyprland.org/)
-[![Nix Flakes](https://img.shields.io/badge/Flakes-enabled-informational.svg?style=for-the-badge&logo=nixos&color=F5C2E7&logoColor=D9E0EE&labelColor=302D41)](https://wiki.nixos.org/wiki/Flakes)
+<p align="center">
+  <a href="https://nixos.org/"><img src="https://img.shields.io/badge/NixOS-25.11-informational.svg?style=for-the-badge&logo=nixos&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41" alt="NixOS"></a>
+  <a href="https://hyprland.org/"><img src="https://img.shields.io/badge/Hyprland-dev-informational.svg?style=for-the-badge&logo=wayland&color=DDB6F2&logoColor=D9E0EE&labelColor=302D41" alt="Hyprland"></a>
+  <a href="https://wiki.nixos.org/wiki/Flakes"><img src="https://img.shields.io/badge/Flakes-enabled-informational.svg?style=for-the-badge&logo=nixos&color=F5C2E7&logoColor=D9E0EE&labelColor=302D41" alt="Nix Flakes"></a>
+</p>
 
 NixOS flake configuration for the ASUS Zephyrus G14 with Home Manager, Hyprland, and Caelestia shell.
 
