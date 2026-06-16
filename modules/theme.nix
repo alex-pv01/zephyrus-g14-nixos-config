@@ -11,10 +11,14 @@
     # Catppuccin cursors
     catppuccin-cursors.mochaPink
 
-    # Papirus icons with Catppuccin folders
+    # Papirus icons with Rose Pine-matching folders (both dark/light)
     (catppuccin-papirus-folders.override {
       flavor = "mocha";
-      accent = "pink";
+      accent = "mauve";
+    })
+    (catppuccin-papirus-folders.override {
+      flavor = "latte";
+      accent = "rosewater";
     })
 
     # Catppuccin wallpaper

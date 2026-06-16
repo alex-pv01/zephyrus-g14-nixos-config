@@ -11,5 +11,6 @@
     pavucontrol
     brightnessctl
     playerctl
+    nwg-displays
   ];
 }

@@ -17,6 +17,13 @@
 
   xdg.configFile."xdg-terminals.list".text = "alacritty\n";
 
+  # Portal config: use GTK backend for Settings (dark/light mode for apps)
+  xdg.configFile."xdg-desktop-portal/hyprland-portals.conf".text = ''
+    [preferred]
+    default=hyprland;gtk
+    org.freedesktop.impl.portal.Settings=gtk
+  '';
+
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {

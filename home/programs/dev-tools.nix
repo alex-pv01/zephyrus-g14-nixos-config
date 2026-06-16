@@ -63,6 +63,7 @@
     # Terminal multiplexer (managed below via programs.tmux)
 
     # Python
+    python3
     uv
 
     # Web development
@@ -70,6 +71,9 @@
 
     # Data science
     kaggle
+
+    # Cloud storage
+    s3cmd
 
     # Remote access
     teleport

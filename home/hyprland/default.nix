@@ -8,10 +8,13 @@
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 
+    extraConfig = ''
+      source = ~/.config/hypr/monitors.conf
+    '';
+
     settings = {
-      # Monitor config — HDMI-A-1 above laptop, others auto-detected to the right
+      # Fallback for when monitors.conf doesn't exist
       monitor = [
-        "HDMI-A-1,preferred,auto-up,1"
         ",preferred,auto,1"
       ];
 
@@ -93,6 +96,7 @@
         "$mod, N, exec, caelestia shell drawers toggle sidebar"
         "$mod SHIFT, N, exec, caelestia shell notifs clear"
         "$mod, B, exec, firefox"
+        "$mod, O, exec, obsidian"
         "$mod, L, exec, loginctl lock-session"
         "$mod, F, fullscreen,"
         "$mod SHIFT, F, fullscreenstate, 0 2"
@@ -148,9 +152,9 @@
         "$mod, mouse_down, workspace, e+1"
         "$mod, mouse_up, workspace, e-1"
 
-        # Screenshots
-        ", Print, exec, grim -g \"$(slurp)\" - | wl-copy"
-        "SHIFT, Print, exec, grim - | wl-copy"
+        # Screenshots (clipboard + save to ~/Pictures/Captures de pantalla/)
+        '', Print, exec, grim -g "$(slurp)" - | tee ~/Pictures/Captures\ de\ pantalla/screenshot-$(date +%Y%m%d-%H%M%S).png | wl-copy''
+        ''SHIFT, Print, exec, grim - | tee ~/Pictures/Captures\ de\ pantalla/screenshot-$(date +%Y%m%d-%H%M%S).png | wl-copy''
       ];
 
       # Mouse bindings
