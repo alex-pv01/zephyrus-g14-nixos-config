@@ -47,7 +47,8 @@ NixOS flake configuration for the ASUS Zephyrus G14 with Home Manager, Hyprland,
 │   ├── fonts.nix                      # System fonts
 │   ├── music.nix                      # JACK, PAM realtime limits for audio production
 │   ├── gaming.nix                     # Steam, 32-bit graphics
-│   └── proton.nix                     # ProtonVPN (loose reverse path for WireGuard)
+│   ├── proton.nix                     # ProtonVPN (loose reverse path for WireGuard)
+│   └── docker.nix                     # Docker daemon, alex in docker group
 └── home/                               # Home Manager modules
     ├── default.nix                    # Home entry point, XDG mime defaults, HiDPI (172 dpi)
     ├── shell/                         # Bash + Starship prompt
@@ -57,7 +58,7 @@ NixOS flake configuration for the ASUS Zephyrus G14 with Home Manager, Hyprland,
     │   ├── git.nix                    # Git config
     │   ├── creative.nix               # Blender, Krita, Inkscape, GIMP, OBS, mpv, imv
     │   ├── music.nix                  # Ardour, Reaper, LMMS, Audacity, MuseScore, Carla
-    │   ├── office.nix                 # Obsidian, LibreOffice, spell-check (EN/ES/DA)
+    │   ├── office.nix                 # Obsidian, LibreOffice, spell-check (EN/ES/DA), TeX Live (full)
     │   ├── gaming.nix                 # Discord, Wine, MangoHud
     │   ├── media.nix                  # Spotify
     │   ├── ai.nix                     # Claude Code
@@ -81,9 +82,11 @@ NixOS flake configuration for the ASUS Zephyrus G14 with Home Manager, Hyprland,
 - **HiDPI**: Xft.dpi set to 172, cursor size 16.
 - **nix-ld enabled**: For dynamically linked binaries from tools like `uv` (Python package manager).
 - **ProtonVPN**: Firewall reverse path set to `loose` for WireGuard compatibility.
+- **Docker**: Daemon enabled via `virtualisation.docker`; `alex` added to the `docker` group for rootless CLI use.
 - **Screenshots**: `Print` for region select (via grim + slurp), `Shift+Print` for full screen — both copy to clipboard.
 - **Alacritty as default terminal**: Set via `xdg-terminals.list` so Nautilus and other apps open it.
 - **Spell-check**: Hunspell dictionaries for English, Spanish, and Danish.
+- **LaTeX**: Full TeX Live distribution (`texlive.combined.scheme-full`) provides `latexmk`, `pdflatex`, BibTeX, etc. for the VS Code LaTeX Workshop extension.
 
 ## Usage
 

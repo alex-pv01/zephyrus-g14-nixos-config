@@ -11,6 +11,7 @@
     ../../modules/music.nix
     ../../modules/gaming.nix
     ../../modules/proton.nix
+    ../../modules/docker.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
