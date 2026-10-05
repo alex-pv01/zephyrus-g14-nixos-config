@@ -6,6 +6,7 @@
     ./alacritty.nix
     ./dev-tools.nix
     ./office.nix
+    ./winapps.nix
     ./creative.nix
     ./music.nix
     ./gaming.nix
