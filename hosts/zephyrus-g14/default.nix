@@ -13,6 +13,7 @@
     ../../modules/proton.nix
     ../../modules/docker.nix
     ../../modules/nix-gc.nix
+    ../../modules/zram.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
