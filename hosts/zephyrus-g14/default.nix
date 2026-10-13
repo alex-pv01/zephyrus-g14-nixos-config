@@ -9,7 +9,7 @@
     ../../modules/theme.nix
     ../../modules/fonts.nix
     ../../modules/music.nix
-    ../../modules/gaming.nix
+    # ../../modules/gaming.nix  # disabled: uninstalls Steam
     ../../modules/proton.nix
     ../../modules/docker.nix
     ../../modules/nix-gc.nix
