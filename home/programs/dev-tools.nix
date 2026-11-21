@@ -1,10 +1,18 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
+let
+  pkgs-unstable = import inputs.nixpkgs-unstable {
+    inherit (pkgs.stdenv.hostPlatform) system;
+    config.allowUnfree = true;
+  };
+in
 {
   home.packages = with pkgs; [
     # Editors
     neovim
-    vscode
+    # From unstable: 26.05's vscode builder removes a bundled ripgrep at a path
+    # that moved in VS Code 1.122.0, so the stable package fails to build.
+    pkgs-unstable.vscode
 
     # Version control
     git
@@ -84,7 +92,7 @@
     seahorse
 
     # Misc
-    neofetch
+    fastfetch # replaces neofetch, removed from nixpkgs (unmaintained upstream)
     cowsay
     file
     which
@@ -95,17 +103,9 @@
   ];
 
   programs.tmux = {
+    # Was pinned to git master for focus-follows-mouse; that shipped in tmux 3.7,
+    # so the plain nixpkgs package (3.7b) is used again.
     enable = true;
-    package = pkgs.tmux.overrideAttrs (old: {
-      version = "3.7-unstable";
-      src = pkgs.fetchFromGitHub {
-        owner = "tmux";
-        repo = "tmux";
-        rev = "634e9d6213b827d8ed93b8179f32cbb76823b619";
-        hash = "sha256-gOmCGekxcYkxXPcX9thIt3hbsqg5jQo2EWdl0XVVnik=";
-      };
-      patches = [ ];
-    });
     mouse = true;
     historyLimit = 10000;
     extraConfig = ''

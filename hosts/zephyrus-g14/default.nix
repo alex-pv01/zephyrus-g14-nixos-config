@@ -9,7 +9,7 @@
     ../../modules/theme.nix
     ../../modules/fonts.nix
     ../../modules/music.nix
-    # ../../modules/gaming.nix  # disabled: uninstalls Steam
+    ../../modules/gaming.nix
     ../../modules/proton.nix
     ../../modules/docker.nix
     ../../modules/nix-gc.nix
@@ -77,6 +77,10 @@
 
   # Printing
   services.printing.enable = true;
+
+  # Firmware updates (LVFS). Does not update anything automatically —
+  # query with `fwupdmgr get-devices` / `fwupdmgr get-updates`.
+  services.fwupd.enable = true;
 
   # Sound (pipewire)
   services.pulseaudio.enable = false;

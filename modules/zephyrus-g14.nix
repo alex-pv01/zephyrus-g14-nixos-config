@@ -20,6 +20,9 @@
     };
   };
 
+  # 32-bit graphics support (Wine)
+  hardware.graphics.enable32Bit = true;
+
   services.xserver.videoDrivers = [
     "amdgpu"
     "nvidia"
@@ -34,7 +37,6 @@
     };
     asusd = {
       enable = true;
-      enableUserService = true;
     };
   };
 }

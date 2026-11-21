@@ -1,7 +1,7 @@
 <h1 align="center">:large_blue_diamond: NixOS Config — ASUS Zephyrus G14 :large_blue_diamond:</h1>
 
 <p align="center">
-  <a href="https://nixos.org/"><img src="https://img.shields.io/badge/NixOS-25.11-informational.svg?style=for-the-badge&logo=nixos&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41" alt="NixOS"></a>
+  <a href="https://nixos.org/"><img src="https://img.shields.io/badge/NixOS-26.05-informational.svg?style=for-the-badge&logo=nixos&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41" alt="NixOS"></a>
   <a href="https://hyprland.org/"><img src="https://img.shields.io/badge/Hyprland-dev-informational.svg?style=for-the-badge&logo=wayland&color=DDB6F2&logoColor=D9E0EE&labelColor=302D41" alt="Hyprland"></a>
   <a href="https://wiki.nixos.org/wiki/Flakes"><img src="https://img.shields.io/badge/Flakes-enabled-informational.svg?style=for-the-badge&logo=nixos&color=F5C2E7&logoColor=D9E0EE&labelColor=302D41" alt="Nix Flakes"></a>
 </p>
@@ -12,7 +12,7 @@ NixOS flake configuration for the ASUS Zephyrus G14 with Home Manager, Hyprland,
 
 - **Laptop**: ASUS ROG Zephyrus G14 (2021, GA401QC)
 - **GPU**: AMD iGPU + NVIDIA RTX 3050 (hybrid offload mode)
-- **OS**: NixOS 25.11
+- **OS**: NixOS 26.05
 
 ## Components
 
@@ -75,8 +75,10 @@ NixOS flake configuration for the ASUS Zephyrus G14 with Home Manager, Hyprland,
 - **NVIDIA hybrid offload**: AMD iGPU drives the display, NVIDIA RTX 3050 available on demand via `nvidia-offload`. Fine-grained power management keeps the dGPU off when idle.
 - **asusctl + supergfxctl**: Fan profiles and GPU mode switching for the Zephyrus G14.
 - **btop with CUDA**: Built with `cudaSupport = true` to monitor RTX 3050 usage. Uses Caelestia color theme and shows GPU box by default.
-- **tmux from git master**: Overridden to build from upstream HEAD for `focus-follows-mouse` support (not yet in any release).
 - **Hyprland dev flake**: Uses the development version, not the nixpkgs package.
+- **Release channel is pinned by hand**: `nixpkgs` tracks a named release branch (`nixos-26.05`). There is no "latest stable" alias in nixpkgs, and stable branches stop receiving security patches roughly a month after the next release ships — so this ref must be bumped manually every ~6 months. A dead branch makes `nix flake update` succeed while silently changing nothing.
+- **vscode comes from `nixpkgs-unstable`**: A second nixpkgs input supplies VS Code only. The 26.05 builder deletes a bundled ripgrep at a path that moved in VS Code 1.122.0, so the stable package fails to build; unstable has the fix.
+- **Firmware updates**: `services.fwupd` enabled for LVFS firmware/BIOS updates. Nothing is flashed automatically — query with `fwupdmgr get-devices` / `get-updates`. ASUS has limited LVFS coverage for this model, so it may report little.
 - **Caelestia shell**: Desktop shell with bar, drawers, sidebar, and notifications. Includes a `toggle-mode` script (`Super+Shift+D`) to switch between Rose Pine Moon (dark) and Dawn (light).
 - **Audio production ready**: JACK enabled via PipeWire, PAM limits set for realtime scheduling (unlimited memlock, rtprio 99).
 - **HiDPI**: Xft.dpi set to 172, cursor size 16.
