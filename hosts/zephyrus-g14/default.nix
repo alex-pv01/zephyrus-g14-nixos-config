@@ -22,8 +22,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Use latest kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # Default (LTS) kernel, deliberately NOT linuxPackages_latest: the NVIDIA 595
+  # module fails to build against 7.x (os-interface.c relies on an implicit
+  # <string.h>, now an error). No driver branch in 26.05 supports 7.x, and the
+  # LTS branch gets security backports for far longer than a mainline release.
+  boot.kernelPackages = pkgs.linuxPackages;
 
   networking.hostName = "zephyrus-g14";
   networking.networkmanager.enable = true;
